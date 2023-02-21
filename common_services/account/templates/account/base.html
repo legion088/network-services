@@ -1,0 +1,16 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    {% block title %}
+    {% endblock %}
+    <link href="{% static 'account/css/signin.css' %}" rel="stylesheet">
+    <link href="{% static 'account/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="icon" href="{% static 'account/img/user-3917559.svg' %}">
+</head>
+<body class="text-center">
+{% block content %}
+{% endblock %}
+</body>
+</html>

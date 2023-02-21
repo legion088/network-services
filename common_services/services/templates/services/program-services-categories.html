@@ -1,0 +1,32 @@
+{% load static %}
+<link href="{% static 'services/css/bootstrap-table.min.css' %}" rel="stylesheet">
+
+<table
+        data-toggle="table"
+        data-pagination="true"
+        data-search="true">
+    <thead class="table-active">
+    <tr>
+        <th data-sortable="true">Адрес ресурса</th>
+        <th data-sortable="true">Описание</th>
+    <tr>
+    </thead>
+    {% for serv in services %}
+    <tr>
+        <td>
+            {% if "http" in serv.link %}
+            <a href="{{serv.link}}" target="_blank">{{serv.link|truncatechars:150}}</a>
+            {% else %}
+            <a href="//{{serv.link}}" target="_blank">{{serv.link|truncatechars:150}}</a>
+            {% endif %}
+        </td>
+        <td>{{serv.description}}</td>
+    </tr>
+    {% empty %}
+    <h3>Элементов данной категории пока нет.</h3>
+    {% endfor %}
+</table>
+
+<script src="{% static 'services/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'services/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'services/js/bootstrap-table.min.js' %}"></script>

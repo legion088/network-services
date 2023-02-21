@@ -1,0 +1,48 @@
+{% extends 'services/base.html' %}
+
+{% block title %}
+<title>{{title}}</title>
+{% endblock %}
+
+{% block content %}
+<div class="p-3 rounded">
+
+    {% for room in rooms %}
+    {% if room == 0 %}
+    {% include 'services/program-services-categories.html' %}
+    {% else %}
+    <h3>Помещение {{room}}</h3>
+    <table class="table table-hover">
+        <thead class="table-active">
+        <tr>
+            <th>Адрес ресурса</th>
+            <th class="table-active">Помещение</th>
+            <th class="table-active">Описание</th>
+        <tr>
+        </thead>
+
+        {% for serv in services %}
+        {% if serv.room_fk.room == room %}
+        <tr>
+            <td>
+                {% if "http" in serv.link %}
+                <a href="{{serv.link}}" target="_blank">{{serv.link|truncatechars:150}}</a>
+                {% else %}
+                <a href="//{{serv.link}}" target="_blank">{{serv.link|truncatechars:150}}</a>
+                {% endif %}
+            </td>
+            <td>{{serv.room_fk.room}}</td>
+            <td>{{serv.description}}</td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+    </table>
+    {% endif %}
+
+    {% empty %}
+    <h3>Категорий нет.</h3>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

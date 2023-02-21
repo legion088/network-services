@@ -1,0 +1,27 @@
+{% extends 'services/base.html' %}
+
+{% block content %}
+<div class="p-3 rounded">
+    <h3>Список доступных категорий</h3>
+    <hr>
+    <table class="table table-bordered table-light">
+        <tr>
+            <th>Категория</th>
+            <th>Количество</th>
+        </tr>
+        {% for cat in cats %}
+        <tr>
+            <td>{{cat.name}}</td>
+            <td>{{cat.count}}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td rowspan="3">Категорий нет</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+{% endblock %}

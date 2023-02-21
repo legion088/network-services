@@ -1,0 +1,30 @@
+{% extends 'account/base.html' %}
+
+{% block title %}
+<title>Вход в систему</title>
+{% endblock %}
+
+{% block content %}
+<main class="form-signin">
+    <form method="post">
+        {% csrf_token %}
+
+        {% if alert %}
+        <div class="alert alert-danger" role="alert">
+            {{alert}}
+        </div>
+        {% endif %}
+        <h1 class="h3 fw-normal">Вход в систему</h1>
+
+        <div class="form-floating">
+            <input class="form-control" name="username" id="floatingInput">
+            <label for="floatingInput">Логин</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" name="password" id="floatingPassword">
+            <label for="floatingPassword">Пароль</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-success" type="submit">Войти</button>
+    </form>
+</main>
+{% endblock %}
