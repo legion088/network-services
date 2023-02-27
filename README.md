@@ -1,7 +1,8 @@
 # Описание проекта:
 ![django](https://github.com/legion088/network-services/blob/main/description_img/Django-092E20.svg)![HTML](https://github.com/legion088/network-services/blob/main/description_img/HTML-239120.svg)![bootstrap](https://github.com/legion088/network-services/blob/main/description_img/Bootstrap-563D7C.svg)<br/>
 Приложение предназначено для централизованного хранения и обращения к веб-ресурсам. <br />
-Приложение может иметь 2 категории: аппаратные, с привязкой к помещению, и программные без привязки. <br /><br />
+Приложение может иметь 2 категории: аппаратные, с привязкой к помещению, и программные без привязки. <br />
+![home](https://github.com/legion088/network-services/blob/main/description_img/home.jpg)
 Реализованный функционал:<br/>
 1. Доступ в систему
 2. Отображение статистики
