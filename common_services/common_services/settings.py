@@ -5,7 +5,8 @@ import account.apps
 import services.apps
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = 'django-insecure-frp3#&%k!+e$g8%+7i7#2&cc9%r&&@#(rgkhsm=zyb^ca511&+'
+# Be sure to add a key
+# SECRET_KEY = ''
 
 DEBUG = False
 
